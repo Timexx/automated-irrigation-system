@@ -35,7 +35,7 @@ const IotButton = props => {
         {spinner === false ? <img width="40px" src={require('../../assets/watering.svg')} alt="dark" /> : <div id="loading" />}
       </button>
       <h3 sx={{ color: "text", marginLeft: "12px", lineHeight: "23px" }}>
-        Menuelle Bewässerung <br />
+        Manuelle Bewässerung <br />
         {spinner === false ? "OFF" : "ON"}
       </h3>
     </div>
