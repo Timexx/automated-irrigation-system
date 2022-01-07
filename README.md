@@ -179,26 +179,38 @@ Teste jetzt nochmal ob es geklappt hat, mit dem Befehl:
 mongo
 ```
 
-<a name="project-installation"></a>
-### **Installing the Project**
+*Bedenke das man bei der 32 Bit Version nur 2GB an Daten in der MongoDB speichern kann.
 
-Download the project from this repository with the following command and go in the project directory:
+<a name="project-installation"></a>
+### **Installiere das Projekt**
+
+Lade das Projekt aus diesem Repository mit folgendem Befehl herunter wenn du es auf Deutsch verwenden möchtest :
+
+#### DE 
+
+```bash
+git clone https://github.com/Timexx/automated-irrigation-system#raspi-manually
+cd automated-irrigation-system
+```
+
+#### ENG 
 
 ```bash
 git clone https://github.com/PatrickHallek/automated-irrigation-system
 cd automated-irrigation-system
 ```
 
-After downloading the project you have to create environment files for the frontend and backend with the following commands:
+Nachdem du das Projekt heruntergeladen hast, musst du mit dem folgenden Befehlen die Umgebungsdateien (eine Art einmalige Einstellungen) für das Frontend und Backend erstellen:
 
 ```bash
 sudo nano .env
 ```
-If you are in nano edit mode, copy the following text into it and type in your raspi ip. You can find the ip with the command `ifconfig`. It should be something like *192.168.178.44*
+Wenn du dich im nano-Editiermodus befinden, kopiere den folgenden Text hinein und gib die Raspi-IP ein. Bitte achte darauf, dass die IP sich nicht mehr verändert. Am Besten im DHCP Dienst deines Routers anpassen. Du kannst die IP mit dem Befehl `ifconfig` finden. Sie sollte in etwa wie *192.168.178.44* aussehen. Ersetze <DEINE-Raspi-IP> durch deine IP. 
+
 ```nano
 SKIP_PREFLIGHT_CHECK=true
 PORT=4200
-REACT_APP_BACKEND_URL="http://<YOUR-RASPI-IP>:3000"
+REACT_APP_BACKEND_URL="http://<DEINE-Raspi-IP>:3000"
 ```
 You can save your input in the Nano editor with `ctr + x`, then type in `yes`, finally exit with `enter`.
 
