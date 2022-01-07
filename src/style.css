@@ -66,10 +66,15 @@ h3 {
 }
 
 h4 {
-  font-size: 13.3333px;
-  font-weight: 100;
-  font-family: "IBM Plex Mono";
-  margin: 5px 0px 5px 0px;
+    position: static;
+    left: 24px;
+    right: 24px;
+    top: 25%;
+    bottom: 25%;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.1px;
 }
 
 .main {

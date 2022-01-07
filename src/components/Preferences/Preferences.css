@@ -9,25 +9,34 @@
 .preference input {
     background: transparent;
     font-family: "Arial";
-    border: solid 2px;
+    border: 1px solid #79747E;
     height: 25px;
-    width: 55px;
+    width: 60px;
     font-size: 18px;
-    border-radius: 5px;
+    border-radius: 4px;
     padding-left: 5px;
     outline: none !important;
     transition: all 0.3s ease;
 }
 
 .preference button {
-    background: transparent;
-    border: solid 2px;
     height: 34px;
     width: 100%;
-    font-size: 18px;
-    border-radius: 5px;
-    padding-left: 5px;
-    margin-top: 5px;
-    outline: none !important;
-    transition: all 0.3s ease;
-}
+    /* margin-top: 5px; */
+    flex: 0 0 auto;
+    font-size: 14;
+    margin-right: 15px;
+    /* margin-bottom: 15px; */
+    margin-top: 10px;
+    /* padding: 3px 8px 3px 8px; */
+    border: 1px solid #79747E;
+    cursor: pointer;
+    border-radius: 100px;
+    padding: 10px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #FFFBFE;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    }
