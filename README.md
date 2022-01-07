@@ -31,7 +31,7 @@ Die App enthält die folgenden Funktionen:
 4. [ Setup NodeMCU ESP8266 ](#nodemcu)
 5. [ Raspberry Pi mit Docker konfigurieren (empfohlen) ](#raspi-docker)
 6. [ Raspberry Pi manuell konfigurieren ](#raspi-manually)
-7. [ Bedienung ](#usage)
+7. [ Verwendung ](#usage)
 8. [ Beiträge ](#contributing)
 9. [ Lizenz ](#license)
 
@@ -186,14 +186,14 @@ mongo
 
 Lade das Projekt aus diesem Repository mit folgendem Befehl herunter wenn du es auf Deutsch verwenden möchtest :
 
-#### DE 
+#### Deutsch 
 
 ```bash
 git clone https://github.com/Timexx/automated-irrigation-system
 cd automated-irrigation-system
 ```
 
-#### ENG 
+#### Englisch 
 
 ```bash
 git clone https://github.com/PatrickHallek/automated-irrigation-system
@@ -212,43 +212,46 @@ SKIP_PREFLIGHT_CHECK=true
 PORT=4200
 REACT_APP_BACKEND_URL="http://<DEINE-Raspi-IP>:3000"
 ```
-You can save your input in the Nano editor with `ctr + x`, then type in `yes`, finally exit with `enter`.
+Du kannst deine Eingaben im Nano-Editor mit `ctr + x` speichern, dann `yes` eintippen und schließlich mit `enter` beenden.
 
-We need to do the same for the backend environment:
+Dasselbe müssen wir für die Backend-Umgebung tun:
 ```bash
 sudo nano backend/.env
 ```
-Copy the following line into the editor in order to set the database connection:
+Kopiere die folgende Zeile in den Editor, um die Datenbankverbindung einzustellen:
 ```
 MONGO_DB="mongodb://localhost/irrigation"
 ```
-In order to install all dependencies in the frontend and backend, you need to run the following 
+Um alle Abhängigkeiten im Frontend und Backend zu installieren, musst du folgendes ausführen
 ```bash
 npm install
 cd backend
 npm install
 ```
 
-If everything is installed, you are able to start the frontend and backend separately 
+Wenn alles installiert ist, kannst du das Frontend und das Backend starten. 
+Beides muss separat voneinander gestartet werden.  
 ```bash
 npm run build
-npm start &
+npm start&
 cd backend 
-npm start &
+npm start&
 ```
 
 <a name="usage"></a>
-## Usage
-The frontend can be accessed at the following URL if you are in your home wifi network:
+## Verwendung
+Auf das Frontend kann unter der folgenden URL zugegriffen werden, wenn du sich im selben Wifi-Netzwerk befindest:
 http://<RASPI_IP>:5000
 
-In order to get the Raspberry Pi IP-address, execute `ifconfig` on the Raspi.
-If everything worked out fine, you should see the measurements in the `Last Minute` view in the statistics and the default preferences (which do not equal to 0).
+Um die IP-Adresse des Raspberry Pi zu erhalten, führe `ifconfig` auf dem Raspi aus.
+Wenn alles geklappt hat, solltest du die Messungen in der Ansicht "Letzte Minute" in den Statistiken und den Standardeinstellungen (die nicht gleich 0 sind) sehen.
+
+Sollten keine Daten nach einigen Minuten angezeigt werden, musst du dein Backend noch einmal versuchen zu starten. 
 
 <a name="contributing"></a>
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+## Beiträge
+Pull Requests sind willkommen. Für größere Änderungen öffnen Sie bitte zuerst ein Issue, um zu besprechen, was Sie ändern möchten.
 
 <a name="licence"></a>
-## License
+## Lizenz
 [MIT](https://choosealicense.com/licenses/mit/)
