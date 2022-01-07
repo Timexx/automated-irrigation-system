@@ -31,6 +31,11 @@ code {
   font-weight: bold;
 }
 
+@font-face {
+    font-family: 'Roboto', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+  }
+
 :root {
   --border-radius: 10px;
   --box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.25);
@@ -46,7 +51,7 @@ code {
 
 h1 {
   font-size: 24px;
-  font-family: "IBM Plex Mono";
+  font-family: "Roboto";
   font-weight: bold;
   margin: 5px 0px 5px 0px;
 }
@@ -54,14 +59,14 @@ h1 {
 h2 {
   display: inline-block;
   font-size: 24px;
-  font-family: "IBM Plex Mono";
+  font-family: "Roboto";
   margin: 5px 0px 5px 0px;
 }
 
 h3 {
   font-size: 18px;
   font-weight: 100;
-  font-family: "IBM Plex Mono";
+  font-family: "Roboto";
   margin: 5px 0px 5px 0px;
 }
 
