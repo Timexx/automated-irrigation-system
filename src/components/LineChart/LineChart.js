@@ -111,10 +111,10 @@ const LineChart = props => {
   return (
     <div className="line-chart">
       <select sx={{ color: "text" }} onChange={(e) => selectFilter(e.target.value)} className="chart-drop-down" value={dataFilter}>
-        <option value="minute">Last Minute</option>
-        <option value="hour">Last Hour</option>
-        <option value="day">Last Day</option>
-        <option value="week">Last Week</option>
+        <option value="minute">Letzte Minute</option>
+        <option value="hour">Letzte Stunde</option>
+        <option value="day">Letzter Tag</option>
+        <option value="week">Letzte Woche</option>
       </select>
       {chartData.dataset ? <div /> : <Line ref={chartRef} data={chartData} options={options} />}
     </div>

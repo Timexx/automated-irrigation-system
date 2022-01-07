@@ -74,7 +74,7 @@ const Preferences = props => {
   return (
     <h3 sx={{ color: "text" }}>
       <div className="preference">
-        <h3>Irrigation time [s]:</h3>
+        <h3>Bewässerungsdauer [s]:</h3>
         <input sx={{ color: "text", borderColor: preferenceBorderColor("irrigationTimeInSeconds") }} type="number"
           onChange={
             (e) => setPreferences({ ...preferences, irrigationTimeInSeconds: parseInt(e.target.value) })
@@ -82,13 +82,13 @@ const Preferences = props => {
           value={preferences.irrigationTimeInSeconds} />
       </div>
       <div className="preference">
-        <h3>Minimum irrigation time interval [min]:</h3>
+        <h3>Mindestdauer bis zur Bewässerung [min]:</h3>
         <input sx={{ color: "text", borderColor: preferenceBorderColor("minIrrigationIntervalInMinutes") }} type="number"
           onChange={(e) => setPreferences({ ...preferences, minIrrigationIntervalInMinutes: parseInt(e.target.value) })}
           value={preferences.minIrrigationIntervalInMinutes} />
       </div>
       <div className="preference">
-        <h3>Minimum soil moisture:</h3>
+        <h3>Minimale Bodenfeuchtigkeit:</h3>
         <input sx={{ color: "text", borderColor: preferenceBorderColor("capacityBuffer") }} type="number"
           onChange={(e) => setPreferences({ ...preferences, capacityBuffer: parseInt(e.target.value) })}
           value={preferences.capacityBuffer} />
@@ -101,7 +101,7 @@ const Preferences = props => {
       </div>
       <div className="preference">
         <div></div>
-        <button sx={{ color: "text", borderColor: preferenceButtonColor() }} onClick={() => updatePreferences()}>Submit</button>
+        <button sx={{ color: "text", borderColor: preferenceButtonColor() }} onClick={() => updatePreferences()}>Änderung speichern</button>
       </div>
     </h3>
   );
