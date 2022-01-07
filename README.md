@@ -3,6 +3,8 @@
 [![PRs welcome!](https://img.shields.io/badge/contributions-welcome-green.svg?style=flat)](https://github.com/PatrickHallek/automated-irrigation-system/issues)
 
 # Automatisches Bewässerungssystem von Patrick Hallek
+## WIP 
+### Es funktioniert alles - es werden noch Kleinigkeiten angepasst
 
 Dieses Projekt ist eine Kopie von [Patrick Hallek Projekt](https://github.com/PatrickHallek/automated-irrigation-system/). 
 Ich möchte es für deutsche Benutzer anpassen und die Benutzererfahrung verbessern. 
