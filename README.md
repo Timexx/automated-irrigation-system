@@ -66,19 +66,19 @@ Die Architektur wurde so gewählt, dass die Pumpenlogik und die Aufzeichnung der
 Für die Software-Architektur ist die [MERN Stack](https://www.educative.io/edpresso/what-is-mern-stack) verwendet wurden. Die Software besteht aus [Node.js](https://nodejs.org/de/about/) backend und [Express.js](https://expressjs.com/de/), eine [Mongo Datenbank](https://www.mongodb.com/) und einem [React](https://reactjs.org/) frontend. Das C++ Script steuert das NodeMCU ESP8266, welches die Daten über [REST-Schnittstelle](https://en.wikipedia.org/wiki/Representational_state_transfer) des Backends sendet. Die Daten werden im Backend verarbeitet, wo entschieden wird, ob bewässert werden soll oder nicht. Außerdem werden die Daten dann in der MongoDB gespeichert. Mit dem Frontend können diese Daten auch über REST vom Backend abgefragt werden.
 
 <a name="nodemcu"></a>
-## Setup the NodeMCU ESP8266
+## NodeMCU ESP8266 einrichten
 
-To flash the NodeMCU microcontroller you have to follow the steps described in [this video](https://www.youtube.com/watch?v=flLMMHCNkQE).
+Um den MCU Controller einzurichten, schau dir am besten [das Video](https://www.youtube.com/watch?v=flLMMHCNkQE) an.
 
-Before you upload the program you have to set your wifi password, wifi name (ssid), the ip of the raspberry pi (host) and the sensor name. The sensor name will be the name that is displayed in the app. So it's best to choose the name of the plant the sensor should be associated with.
+Bevor Sie das Programm hochladen, müssen Sie Ihr WLAN-Passwort, den WLAN-Namen (ssid), die IP des Raspberry Pi (Host) und den Sensornamen festlegen. Der Sensorname wird der Name sein, der in der App angezeigt wird. Es ist also am besten, den Namen der Pflanze zu wählen, mit der der Sensor verbunden werden soll.
 
-If the Arduino IDE is successfully configured for the NodeMCU, you can upload the program you find in this repository under [arduino-code/ESP8266_moisture/ESP8266_moisture.ino](https://github.com/PatrickHallek/automated-irrigation-system/blob/master/arduino-code/ESP8622_moisture.ino/ESP8622_moisture.ino.ino) to the NodeMCU.
+Wenn die Arduino-IDE erfolgreich für den NodeMCU konfiguriert ist, können Sie das Programm, das Sie in diesem Repository finden, hochladen von [arduino-code/ESP8266_moisture/ESP8266_moisture.ino](https://github.com/PatrickHallek/automated-irrigation-system/blob/master/arduino-code/ESP8622_moisture.ino/ESP8622_moisture.ino.ino) zum ESP8266 Controller.
 
 
 <a name="raspi-docker"></a>
-## Setup the Raspberry Pi with [Docker](https://www.docker.com/) (recommended)
+## Setup the Raspberry Pi mit [Docker](https://www.docker.com/) (empfohlen)
 
-To avoid having to install the required programs manually, you can also run the application with Docker in containers. To do this, carry out the following steps:
+Um die erforderlichen Programme nicht manuell installieren zu müssen, können Sie die Anwendung auch mit Docker in Containern ausführen. Führe dazu die folgenden Schritte aus:
 
 ```bash
 curl -sSL https://get.docker.com | sh
@@ -89,15 +89,15 @@ sudo apt-get remove python-configparser
 sudo pip3 install docker-compose
 ```
 
-Now you have to pass the ip address of your pi into the `REACT_APP_BACKEND_URL=http://<YOUR-RASPI-IP>:3000` environment variable in the docker-compose file:
+Nun müssen Sie die IP-Adresse Ihres Pi in die Umgebungsvariable `REACT_APP_BACKEND_URL=http://<DEINE-RaspberryPi-IP>:3000` in der docker-compose-Datei eintragen:
 
 ```bash
 sudo nano docker-compose.yml
 ```
 
-You can find the ip with the command `ifconfig`. It should be something like *192.168.178.44*. You can save your input in the Nano editor with `ctr + x`, then type in `yes`, finally exit with `enter`.
+Du könnenkannst die IP mit dem Befehl `ifconfig` herausfinden. Sie sollte so etwas aussehen *192.168.178.44*. Du kannst deine  Eingabe im Nano-Editor mit `ctr + x` speichern, dann `yes` eintippen und schließlich mit `enter` beenden.
 
-Now everything should be ready and you can start the application with the following command:
+Jetzt sollte alles fertig sein und du kannst die Anwendung mit dem folgenden Befehl starten:
 
 ```bash
 sudo docker-compose up
