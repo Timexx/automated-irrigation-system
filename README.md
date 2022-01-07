@@ -70,7 +70,7 @@ Für die Software-Architektur ist die [MERN Stack](https://www.educative.io/edpr
 
 Um den MCU Controller einzurichten, schau dir am besten [das Video](https://www.youtube.com/watch?v=flLMMHCNkQE) an.
 
-Bevor Sie das Programm hochladen, müssen Sie Ihr WLAN-Passwort, den WLAN-Namen (ssid), die IP des Raspberry Pi (Host) und den Sensornamen festlegen. Der Sensorname wird der Name sein, der in der App angezeigt wird. Es ist also am besten, den Namen der Pflanze zu wählen, mit der der Sensor verbunden werden soll.
+Bevor du das Programm hochlädst, musst du dein WLAN-Passwort, den WLAN-Namen (ssid), die IP des Raspberry Pi (Host) und den Sensornamen festlegen. Der Sensorname wird der Name sein, der in der App angezeigt wird. Es ist also am besten, den Namen der Pflanze zu wählen, mit der der Sensor verbunden werden soll.
 
 Wenn die Arduino-IDE erfolgreich für den NodeMCU konfiguriert ist, können Sie das Programm, das Sie in diesem Repository finden, hochladen von [arduino-code/ESP8266_moisture/ESP8266_moisture.ino](https://github.com/PatrickHallek/automated-irrigation-system/blob/master/arduino-code/ESP8622_moisture.ino/ESP8622_moisture.ino.ino) zum ESP8266 Controller.
 
@@ -78,7 +78,7 @@ Wenn die Arduino-IDE erfolgreich für den NodeMCU konfiguriert ist, können Sie 
 <a name="raspi-docker"></a>
 ## Setup the Raspberry Pi mit [Docker](https://www.docker.com/) (empfohlen)
 
-Um die erforderlichen Programme nicht manuell installieren zu müssen, können Sie die Anwendung auch mit Docker in Containern ausführen. Führe dazu die folgenden Schritte aus:
+Um die erforderlichen Programme nicht manuell installieren zu müssen, kannst du die Anwendung auch mit Docker in Containern ausführen. Führe dazu die folgenden Schritte aus:
 
 ```bash
 curl -sSL https://get.docker.com | sh
@@ -89,13 +89,13 @@ sudo apt-get remove python-configparser
 sudo pip3 install docker-compose
 ```
 
-Nun müssen Sie die IP-Adresse Ihres Pi in die Umgebungsvariable `REACT_APP_BACKEND_URL=http://<DEINE-RaspberryPi-IP>:3000` in der docker-compose-Datei eintragen:
+Nun musst du die IP-Adresse deines Pi´s in die Umgebungsvariable `REACT_APP_BACKEND_URL=http://<DEINE-RaspberryPi-IP>:3000` in der docker-compose-Datei eintragen:
 
 ```bash
 sudo nano docker-compose.yml
 ```
 
-Du könnenkannst die IP mit dem Befehl `ifconfig` herausfinden. Sie sollte so etwas aussehen *192.168.178.44*. Du kannst deine  Eingabe im Nano-Editor mit `ctr + x` speichern, dann `yes` eintippen und schließlich mit `enter` beenden.
+Du kannst die IP mit dem Befehl `ifconfig` herausfinden. Sie sollte so etwas aussehen *192.168.178.44*. Du kannst deine  Eingabe im Nano-Editor mit `ctr + x` speichern, dann `yes` eintippen und schließlich mit `enter` beenden.
 
 Jetzt sollte alles fertig sein und du kannst die Anwendung mit dem folgenden Befehl starten:
 
