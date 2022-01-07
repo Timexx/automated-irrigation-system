@@ -14,7 +14,7 @@ const theme = {
       dark: {
         text: "white",
         background: "#161A30",
-        backgroundSecondary: "#F5F5F5",
+        backgroundSecondary: "#262F4D",
         muted: "#fff"
       }
     }
