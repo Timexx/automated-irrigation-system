@@ -4,61 +4,61 @@
 
 # Automated irrigation system from Patrick Hallek
 
-This project is a clone of Patrick Hallek. 
-I want to adapt it for German users and improve the userexperience. 
+Dieses Projekt ist eine Kopie von [Patrick Hallek Projekt](https://github.com/PatrickHallek/automated-irrigation-system/). 
+Ich möchte es für deutsche Benutzer anpassen und die Benutzererfahrung verbessern. 
 
-This is an open source application to water plants automatically. Up to now there is almost no free professional software and instructions available to build a DYI irrigation that is scalable, accurate and most importantly, durable. The app is also not only there to look good and for the love of data. Above all, it is a tool to tailor the sensors to the exact needs of the plants. This is where most irrigation systems with direct soil moisture measurement fail because every soil and plant is different and therefore manual calibration and possibly after some time also recalibration is essential.
+Es handelt sich um eine Open-Source-Anwendung zur automatischen Bewässerung von Pflanzen. Bis jetzt gibt es fast keine kostenlose professionelle Software und Anleitungen, um eine DYI-Bewässerung zu bauen, die skalierbar, genau und vor allem langlebig ist. Die App ist auch nicht nur dazu da, um gut auszusehen und aus Liebe zu den Daten. Sie ist vor allem ein Werkzeug, um die Sensoren genau auf die Bedürfnisse der Pflanzen abzustimmen. Hier scheitern die meisten Bewässerungssysteme mit direkter Bodenfeuchtemessung, da jeder Boden und jede Pflanze anders ist und daher eine manuelle Kalibrierung und möglicherweise nach einiger Zeit auch eine Rekalibrierung erforderlich ist.
 
-The app contains the following features:
-- Monitor and display time series data at the minute, hour, day, week and month levels
-- Setting the water level from which automatic watering should be triggered.
-- Setting how long the pump works during an irrigation
-- Manual activation of irrigation with a button
-- Switching between different sensor profiles
-- Switching between dark and light theme
+Die App enthält die folgenden Funktionen:
+- Überwachung und Anzeige von Zeitraumdaten auf Minuten-, Stunden-, Tages-, Wochen- und Monatsebene
+- Einstellung des Wasserstandes, ab dem die automatische Bewässerung ausgelöst werden soll.
+- Einstellung, wie lange die Pumpe während einer Bewässerung arbeitet
+- Manuelle Aktivierung der Bewässerung mit einer Taste
+- Umschalten zwischen verschiedenen Sensorprofilen / Pflanzen
+- Umschalten zwischen dunklem und hellem Design
 
-| App dark themed  | App light themed |
+| Dunkels Design  | Helles Design |
 | ------------- | ------------- |
 | ![App dark themed](https://github.com/PatrickHallek/automated-irrigation-system/blob/master/docs/images/app-dark.png) | ![App light themed](https://github.com/PatrickHallek/automated-irrigation-system/blob/master/docs/images/app-light.png)|
 
-# Table of contents
+# Inhaltsverzeichnis 
 
-1. [ Part list ](#part-list)
+1. [ Hardware Liste ](#part-list)
 2. [ Hardware Architecture ](#hardware-architecture)
 3. [ Software Architecture ](#software-architecture)
 4. [ Setup NodeMCU ESP8266 ](#nodemcu)
-5. [ Setup the Raspberry Pi with Docker (recommended) ](#raspi-docker)
-6. [ Setup the Raspberry Pi manually ](#raspi-manually)
-7. [ Usage ](#usage)
-8. [ Contributing ](#contributing)
-9. [ License ](#license)
+5. [ Setup the Raspberry Pi mit Docker (empfohlen) ](#raspi-docker)
+6. [ Setup the Raspberry Pi manuell ](#raspi-manually)
+7. [ Bedienung ](#usage)
+8. [ Beiträge ](#contributing)
+9. [ Lizenz ](#license)
 
 <a name="part-list"></a>
 ## Part list
 
-| Name  | Anmount | Description |
+| Name  | Anzahl | Beschreibung |
 | ------------- | ------------- | ------------- |
-| [CHEAP ALL IN ONE OFFER](https://amzn.to/39jLexe)  | 1 - n  | pump, tube, capacity sensor and relay |
-| [NodeMCU ESP8266](https://amzn.to/3dh7IPR)  | 1 - n  | Wifi module for reading capacities and sending them to the backend (Raspi)|
-| [Raspberry Pi Zero](https://amzn.to/2NeY05X)  | 1  | Running the whole software and triggering the pump(s) |
-| [Raspberry Pi SD Card](https://amzn.to/3hLghpt)  | 1  | This is the data memory for the raspberry pi  |
-| [Relay](https://amzn.to/2YgcvNt)  | 1 - n  | To close or open the pump circuit on signal  from the raspi|
-| [Capacitive Soil Moisture Sensors](https://amzn.to/3dh9PTU)  | 1-n  | To measure the soil moisture. Capacitive sensors do not dissolve. Never use electrodical humidity sensors, as they wear out very quickly |
-| [Pump](https://amzn.to/2WO8Zsf)  | 1 - n  | Theoretically any pump can be used, as it is controlled by a separate power supply and the relay |
-| [Aquarium tube and irrigation nozzles](https://amzn.to/3153W9I)  | -  | Water transfer to the plants and to distribute the water on the earth |
+| [CHEAP ALL IN ONE OFFER](https://amzn.to/39jLexe)  | 1 - n  | Pumpe, Schlauch, Leistungssensor und Relais |
+| [NodeMCU ESP8266](https://amzn.to/3dh7IPR)  | 1 - n  | Wifi-Modul zum Auslesen der Kapazitäten und Senden an das Backend (Raspi)|
+| [Raspberry Pi Zero](https://amzn.to/2NeY05X)  | 1  | Ausführen der gesamten Software und Auslösen der Pumpe(n) |
+| [Raspberry Pi SD Card](https://amzn.to/3hLghpt)  | 1  | Dies ist der Datenspeicher für den Raspberry Pi  |
+| [Relay](https://amzn.to/2YgcvNt)  | 1 - n  | Zum Schließen oder Öffnen des Pumpenkreislaufs auf Signal des Raspi |
+| [Capacitive Soil Moisture Sensors](https://amzn.to/3dh9PTU)  | 1-n  | Zur Messung der Bodenfeuchtigkeit. Die kapazitiven Sensoren lösen sich nicht auf. Verwenden Sie niemals elektrodynamische Feuchtesensoren, da diese sehr schnell verschleißen. |
+| [Pump](https://amzn.to/2WO8Zsf)  | 1 - n  | Theoretisch kann jede Pumpe verwendet werden, da sie über eine separate Stromversorgung und das Relais gesteuert wird. |
+| [Aquarium tube and irrigation nozzles](https://amzn.to/3153W9I)  | -  | Wasserübertragung zu den Pflanzen und Verteilung des Wassers auf der Erde |
 
-*all product links are also affiliate links to exactly the same products I bought for the system. If you order via the link, I will receive a tiny commission.
+*Alle Produktlinks sind auch Partnervorschläge für genau die Produkte, die ich für das System gekauft habe. Wenn Sie über den Link bestellen, erhalte ich <b>Patrick Hallek</b>> eine kleine Provision.
 
-The "n" in the anmount is due to the number of pumps or different plants. For example, in a raised bed it is usually sufficient to have one pump and one sensor. However, if you have different potted plants, they all need to be watered separately and therefor you have to get one pump and sensor for each potted plant.
+Das "n" in der Anzahl ergibt sich aus der Anzahl der Pumpen oder der verschiedenen Pflanzen. In einem Hochbeet zum Beispiel reicht normalerweise eine Pumpe und ein Sensor aus. Wenn Sie jedoch verschiedene Topfpflanzen haben, müssen sie alle separat bewässert werden, und deshalb müssen Sie für jede Topfpflanze eine Pumpe und einen Sensor kaufen.
 
 <a name="hardware-architecture"></a>
-## Hardware architecture
+## Hardware Architektur
 ![Hardware Architecture](https://github.com/PatrickHallek/automated-irrigation-system/blob/master/docs/images/hardware-architecture.png)
 
-The architecture was chosen so that pump logic and recording of measurement data is separate. This makes it possible to control up to 26 pumps with the Raspberry Pi (amount of default available GPIO pins). It is also not possible to read the analog signals of the capacitive sensor with the Raspberry itself, because the Raspberry can only process digital signals. Surely it is possible to read the sensors with an MCP3008 and the serial interface, but this requires more pins and the setup is not as clean as it used to be. The pumps are also separately connected to a power supply, whose circuit is controlled by the relay. So it is also possible to use 12V or higher pumps.
+Die Architektur wurde so gewählt, dass die Pumpenlogik und die Aufzeichnung der Messdaten getrennt sind. Dadurch ist es möglich, bis zu 26 Pumpen mit dem Raspberry Pi zu steuern (Anzahl der standardmäßig verfügbaren GPIO-Pins). Es ist auch nicht möglich, die analogen Signale des kapazitiven Sensors mit dem Raspberry selbst auszulesen, da der Raspberry nur digitale Signale verarbeiten kann. Sicherlich ist es möglich, die Sensoren mit einem MCP3008 und der seriellen Schnittstelle auszulesen, aber das erfordert mehr Pins und der Aufbau ist nicht mehr so sauber wie früher. Die Pumpen sind auch separat an eine Stromversorgung angeschlossen, deren Schaltung durch das Relais gesteuert wird. So ist es auch möglich, Pumpen mit 12V oder mehr zu verwenden.
 
 <a name="software-architecture"></a>
-## Software architecture
+## Software Architektur
 ![Software Architecture](https://github.com/PatrickHallek/automated-irrigation-system/blob/master/docs/images/software-architecture.png)
 
 For the software architecture the [MERN Stack](https://www.educative.io/edpresso/what-is-mern-stack) was used. The software consists of a [Node.js](https://nodejs.org/de/about/) backend with [Express.js](https://expressjs.com/de/), a [Mongo database](https://www.mongodb.com/) and a [React](https://reactjs.org/) frontend. A C++ script runs on the NodeMCU ESP8266, which sends data to the [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) interface of the backend. The data is processed in the backend, where it is decided whether to irrigate or not. In addition, the data is then stored in the MongoDB. With the frontend, this data can also be requested from the backend via REST.
