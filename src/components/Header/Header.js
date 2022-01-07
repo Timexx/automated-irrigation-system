@@ -7,7 +7,6 @@ const Header = () => {
   return (
     <header sx={{ bg: "backgroundSecondary" }}>
       <h1 className="logo-text" sx={{ color: "text" }}>
-        <img src={require('../../assets/logo.svg')} alt="logo" />
         Smarte Bewässerung
       </h1>
       <ThemePicker />
