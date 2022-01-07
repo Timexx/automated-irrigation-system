@@ -39,10 +39,10 @@ const Main = () => {
             <SensorPicker sensors={sensors} setSensorInFocus={setSensorInFocus} sensorInFocus={sensorInFocus} />
           </div>
           <div className="col-md-12">
-            <Card title="Statistics" body={<LineChart sensorInFocus={sensorInFocus} />} />
+            <Card title="Statistik" body={<LineChart sensorInFocus={sensorInFocus} />} />
           </div>
           <div className="col-md-6">
-            <Card title="Preferences" body={<Preferences sensorInFocus={sensorInFocus} />} />
+            <Card title="Pflanze" body={<Preferences sensorInFocus={sensorInFocus} />} />
           </div>
           <div className="col-md-6">
             <Card body={<IotButton sensorInFocus={sensorInFocus} />} />
