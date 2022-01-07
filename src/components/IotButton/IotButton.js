@@ -36,7 +36,7 @@ const IotButton = props => {
       </button>
       <h3 sx={{ color: "text", marginLeft: "12px", lineHeight: "23px" }}>
         Manuelle Bewässerung <br />
-        {spinner === false ? "OFF" : "ON"}
+        {spinner === false ? "Deaktiviert" : "Wasser läuft gerade"}
       </h3>
     </div>
   );
