@@ -2,7 +2,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![PRs welcome!](https://img.shields.io/badge/contributions-welcome-green.svg?style=flat)](https://github.com/PatrickHallek/automated-irrigation-system/issues)
 
-# Automated irrigation system from Patrick Hallek
+# Automatisches Bewässerungssystem von Patrick Hallek
 
 Dieses Projekt ist eine Kopie von [Patrick Hallek Projekt](https://github.com/PatrickHallek/automated-irrigation-system/). 
 Ich möchte es für deutsche Benutzer anpassen und die Benutzererfahrung verbessern. 
@@ -47,7 +47,7 @@ Die App enthält die folgenden Funktionen:
 | [Pump](https://amzn.to/2WO8Zsf)  | 1 - n  | Theoretisch kann jede Pumpe verwendet werden, da sie über eine separate Stromversorgung und das Relais gesteuert wird. |
 | [Aquarium tube and irrigation nozzles](https://amzn.to/3153W9I)  | -  | Wasserübertragung zu den Pflanzen und Verteilung des Wassers auf der Erde |
 
-*Alle Produktlinks sind auch Partnervorschläge für genau die Produkte, die ich für das System gekauft habe. Wenn Sie über den Link bestellen, erhalte ich <b>Patrick Hallek</b>> eine kleine Provision.
+*Alle Produktlinks sind auch Partnervorschläge für genau die Produkte, die ich für das System gekauft habe. Wenn Sie über den Link bestellen, erhalte ich <b>Patrick Hallek</b> eine kleine Provision.
 
 Das "n" in der Anzahl ergibt sich aus der Anzahl der Pumpen oder der verschiedenen Pflanzen. In einem Hochbeet zum Beispiel reicht normalerweise eine Pumpe und ein Sensor aus. Wenn Sie jedoch verschiedene Topfpflanzen haben, müssen sie alle separat bewässert werden, und deshalb müssen Sie für jede Topfpflanze eine Pumpe und einen Sensor kaufen.
 
@@ -61,7 +61,7 @@ Die Architektur wurde so gewählt, dass die Pumpenlogik und die Aufzeichnung der
 ## Software Architektur
 ![Software Architecture](https://github.com/PatrickHallek/automated-irrigation-system/blob/master/docs/images/software-architecture.png)
 
-For the software architecture the [MERN Stack](https://www.educative.io/edpresso/what-is-mern-stack) was used. The software consists of a [Node.js](https://nodejs.org/de/about/) backend with [Express.js](https://expressjs.com/de/), a [Mongo database](https://www.mongodb.com/) and a [React](https://reactjs.org/) frontend. A C++ script runs on the NodeMCU ESP8266, which sends data to the [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) interface of the backend. The data is processed in the backend, where it is decided whether to irrigate or not. In addition, the data is then stored in the MongoDB. With the frontend, this data can also be requested from the backend via REST.
+Für die Software-Architektur ist die [MERN Stack](https://www.educative.io/edpresso/what-is-mern-stack) verwendet wurden. Die Software besteht aus [Node.js](https://nodejs.org/de/about/) backend und [Express.js](https://expressjs.com/de/), eine [Mongo Datenbank](https://www.mongodb.com/) und einem [React](https://reactjs.org/) frontend. Das C++ Script steuert das NodeMCU ESP8266, welches die Daten über [REST-Schnittstelle](https://en.wikipedia.org/wiki/Representational_state_transfer) des Backends sendet. Die Daten werden im Backend verarbeitet, wo entschieden wird, ob bewässert werden soll oder nicht. Außerdem werden die Daten dann in der MongoDB gespeichert. Mit dem Frontend können diese Daten auch über REST vom Backend abgefragt werden.
 
 <a name="nodemcu"></a>
 ## Setup the NodeMCU ESP8266
