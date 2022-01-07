@@ -189,7 +189,7 @@ Lade das Projekt aus diesem Repository mit folgendem Befehl herunter wenn du es 
 #### DE 
 
 ```bash
-git clone https://github.com/Timexx/automated-irrigation-system#raspi-manually
+git clone https://github.com/Timexx/automated-irrigation-system
 cd automated-irrigation-system
 ```
 
@@ -205,7 +205,7 @@ Nachdem du das Projekt heruntergeladen hast, musst du mit dem folgenden Befehlen
 ```bash
 sudo nano .env
 ```
-Wenn du dich im nano-Editiermodus befinden, kopiere den folgenden Text hinein und gib die Raspi-IP ein. Bitte achte darauf, dass die IP sich nicht mehr verändert. Am Besten im DHCP Dienst deines Routers anpassen. Du kannst die IP mit dem Befehl `ifconfig` finden. Sie sollte in etwa wie *192.168.178.44* aussehen. Ersetze <DEINE-Raspi-IP> durch deine IP. 
+Wenn du dich im nano-Editiermodus befinden, kopiere den folgenden Text hinein und gib die Raspi-IP ein. Bitte achte darauf, dass die IP sich nicht mehr verändert. Am Besten im DHCP Dienst deines Routers anpassen. Du kannst die IP mit dem Befehl `ifconfig` finden. Sie sollte in etwa wie *192.168.178.44* aussehen.
 
 ```nano
 SKIP_PREFLIGHT_CHECK=true
