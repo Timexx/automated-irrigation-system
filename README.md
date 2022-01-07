@@ -29,8 +29,8 @@ Die App enthält die folgenden Funktionen:
 2. [ Hardware Architecture ](#hardware-architecture)
 3. [ Software Architecture ](#software-architecture)
 4. [ Setup NodeMCU ESP8266 ](#nodemcu)
-5. [ Setup the Raspberry Pi mit Docker (empfohlen) ](#raspi-docker)
-6. [ Setup the Raspberry Pi manuell ](#raspi-manually)
+5. [ Raspberry Pi mit Docker konfigurieren (empfohlen) ](#raspi-docker)
+6. [ Raspberry Pi manuell konfigurieren ](#raspi-manually)
 7. [ Bedienung ](#usage)
 8. [ Beiträge ](#contributing)
 9. [ Lizenz ](#license)
@@ -76,7 +76,7 @@ Wenn die Arduino-IDE erfolgreich für den NodeMCU konfiguriert ist, können Sie 
 
 
 <a name="raspi-docker"></a>
-## Setup the Raspberry Pi mit [Docker](https://www.docker.com/) (empfohlen)
+## Raspberry Pi mit [Docker](https://www.docker.com/) konfigurieren (empfohlen)
 
 Um die erforderlichen Programme nicht manuell installieren zu müssen, kannst du die Anwendung auch mit Docker in Containern ausführen. Führe dazu die folgenden Schritte aus:
 
@@ -103,21 +103,21 @@ Jetzt sollte alles fertig sein und du kannst die Anwendung mit dem folgenden Bef
 sudo docker-compose up
 ```
 
-**Attention**: If you have a Raspberry Pi with a processor other than *ARMv7*, you need to adjust the image for the mongodb in the docker-compose file. Since this is only suitable for *ARMv6*.
+**Achtung**: Wenn du einen Raspberry Pi mit einem *ARMv7* Prozessor hast, musst du das image in der docker-compose Datei anpassen. Denn diese ist nur für *ARMv6* geeignet.
 
 <a name="raspi-manually"></a>
-## Setup the Raspberry Pi manually
+## Raspberry Pi manuell konfigurieren
 
-To set everything up we first have to burn an image to the SD card and connect to the Raspberry pi via an ssh connection. Follow [this video](https://www.youtube.com/watch?v=upY4Fusi4zI&t=714s) to perform these steps.
+Um alles einzurichten, müssen wir zunächst ein Image auf die SD-Karte brennen und uns über eine ssh-Verbindung mit dem Raspberry Pi verbinden. Schau [das Video](https://www.youtube.com/watch?v=upY4Fusi4zI&t=714s) um diese Schritte durchzuführen.
 
-After everything has worked out, connect to the raspberry pi and take the next steps
+Nachdem alles geklappt hat, verbinde dich mit dem Raspberry Pi und führe die nächsten Schritte aus.
 
 <a name="node"></a>
-### **Installing [Node](https://nodejs.org/en/about/)**
+### **Installiere [Node](https://nodejs.org/en/about/)**
 
-Node.js is an open source server environment with which we developed the backend and thus the logic for automated irrigation. The backend is the heart of the application and connects the sensor data, user interface, database and hardware (relay to the pump).
+Node.js ist eine Open-Source-Serverumgebung, mit der wir das Backend und damit die Logik für die automatische Bewässerung entwickelt haben. Das Backend ist das Herzstück der Anwendung und verbindet die Sensordaten, die Benutzeroberfläche, die Datenbank und die Hardware (Relais zur Pumpe).
 
-Execute the following commands on the raspi in oder to install Node:
+Führe die folgenden Befehle auf dem Raspi aus, um Node zu installieren:
 
 ```bash
 wget https://nodejs.org/dist/v11.9.0/node-v11.9.0-linux-armv6l.tar.gz
@@ -126,18 +126,20 @@ cd node-v11.9.0-linux-armv6l
 sudo cp -R * /usr/local/
 ```
 
-That the installation has worked can be checked with the two commands for version query of Node.js and NPM:
+Dass die Installation funktioniert hat, kann mit den beiden Befehlen zur Versionsabfrage von Node.js und NPM überprüft werden:
 
 ```bash
 node -v
 npm -v
 ```
 
-<a name="mongodb"></a>
-### **Installing [MongoDB](https://www.mongodb.com/de)**
-MongoDB is a universal, document-based, distributed noSQL database where we will store our settings and time series data.
+Jetzt sollte dir eine Versionsnummer ausgegeben werden.
 
-Execute the following commands on the raspi in oder to install MongoDB:
+<a name="mongodb"></a>
+### **Installiere [MongoDB](https://www.mongodb.com/de)**
+MongoDB ist eine universelle, dokumentenbasierte, verteilte noSQL-Datenbank, in der wir unsere Einstellungen und Zeitreihendaten speichern werden.
+
+Führe die folgenden Befehle auf dem Raspi aus, um MongoDB zu installieren:
 
 ```bash
 sudo apt update
@@ -149,7 +151,29 @@ sudo systemctl enable mongodb
 sudo systemctl start mongodb
 ```
 
-That the installation has worked can be checked with the command below:
+Dass die Installation funktioniert hat, kann mit dem folgenden Befehl überprüft werden:
+
+```bash
+mongo
+```
+
+#### 32 Bit Mongo Version 
+Bei mir hatte es leider nicht funktioniert, weil ich eine 32Bit Version benötigt habe. 
+Dazu kannst du diese Alternative Variante nutzen, welche von [der Seite](https://www.alcher.me/databases-ru-en/mongodb/install-32-and-64-mongodb/) stammt: 
+
+```bash
+curl -s https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
+echo "deb [ arch=arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+sudo apt update
+```
+
+Jetzt noch die eigentliche Installation
+
+```bash
+sudo apt install mongodb
+```
+
+Teste jetzt nochmal ob es geklappt hat, mit dem Befehl:
 
 ```bash
 mongo
