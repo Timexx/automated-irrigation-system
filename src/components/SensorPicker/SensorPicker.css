@@ -1,7 +1,8 @@
 .sensorPicker {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     width: 100%;
+    overflow-y: scroll;
 }
 
 .sensorPicker>div {
