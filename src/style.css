@@ -6,6 +6,7 @@ body {
     "Fira Sans",
     "Droid Sans",
     "Helvetica Neue",
+    "Robotot",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -33,12 +34,12 @@ code {
 
 @font-face {
     font-family: 'Roboto', sans-serif;
-    src: local('Roboto'), url('/src/assets/Roboto/Roboto-Regular.ttf') format('woff');
+    src: local('Roboto'), url('./assets/Roboto/Roboto-Regular.ttf') format('woff');
 }
 
 @font-face {
     font-family: 'Roboto', sans-serif;
-    src: local('Roboto'), url('/src/assets/Roboto/Roboto-Bold.ttf') format('woff');
+    src: local('Roboto'), url('./assets/Roboto/Roboto-Bold.ttf') format('woff');
     font-weight: bold;
 }
 
@@ -57,7 +58,7 @@ code {
 
 h1 {
   font-size: 24px;
-  font-family: "Roboto";
+  font-family: 'Roboto', sans-serif;
   font-weight: bold;
   margin: 5px 0px 5px 0px;
 }
@@ -65,18 +66,19 @@ h1 {
 h2 {
   display: inline-block;
   font-size: 24px;
-  font-family: "Roboto";
+  font-family: 'Roboto', sans-serif;
   margin: 5px 0px 5px 0px;
 }
 
 h3 {
   font-size: 18px;
   font-weight: 100;
-  font-family: "Roboto";
+  font-family: 'Roboto', sans-serif;
   margin: 5px 0px 5px 0px;
 }
 
 h4 {
+    font-family: 'Roboto', sans-serif;
     position: static;
     left: 24px;
     right: 24px;
