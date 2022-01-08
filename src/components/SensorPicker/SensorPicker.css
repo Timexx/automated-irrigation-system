@@ -21,8 +21,9 @@
     justify-content: center;
     align-items: center;
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px 0px rgba(0, 0, 0, 0);
-    border: 1px solid rgba(121, 116, 126, 0.69);
+    color: white;
     height: 40px;
+    background: #306A4C;
     /* flex: none; */
     /* order: 0; */
     /* flex-grow: 0; */
