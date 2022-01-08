@@ -14,7 +14,6 @@
     border-radius: 5px;
     outline: none !important;
     border: none;
-    box-shadow: var(--box-shadow);
 }
 
 #loading {
