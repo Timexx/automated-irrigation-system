@@ -3,3 +3,4 @@ node_modules/
 .vscode
 build/
 arduino-code/
+arduino-code/ESP8622_moisture.ino/ESP8622_moisture.ino.ino
