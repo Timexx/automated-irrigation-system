@@ -21,7 +21,7 @@ Die App enthält die folgenden Funktionen:
 
 | Dunkels Design  | Helles Design |
 | ------------- | ------------- |
-| ![App dark themed](https://github.com/PatrickHallek/automated-irrigation-system/blob/master/docs/images/app-dark.png) | ![App light themed](https://github.com/PatrickHallek/automated-irrigation-system/blob/master/docs/images/app-light.png)|
+| ![App dark themed](https://github.com/Timexx/automated-irrigation-system/blob/master/docs/images/app-dark.png) | ![App light themed](https://github.com/Timexx/automated-irrigation-system/blob/master/docs/images/app-light.png)|
 
 # Inhaltsverzeichnis 
 
