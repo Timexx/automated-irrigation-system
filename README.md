@@ -261,7 +261,7 @@ Sollten keine Daten nach einigen Minuten angezeigt werden, musst du dein Backend
 Wenn die Software automatisch starten soll, nach jedem Boot, kann das mit PM2 gemacht werden. 
 
 ```bash
-npm install pm2@latest -g
+sudo npm install pm2@latest -g
 cd automated-irrigation-system
 pm2 start npm --name "Frontend" -- start
 cd backend 
