@@ -127,6 +127,13 @@ cd node-v11.9.0-linux-armv6l
 sudo cp -R * /usr/local/
 ```
 
+#### Pi3 / pi4
+Hier kann auch die normale Nodejs aus dem APT installiert werden
+
+```bash
+sudo apt install nodejs npm 
+```
+
 Dass die Installation funktioniert hat, kann mit den beiden Befehlen zur Versionsabfrage von Node.js und NPM überprüft werden:
 
 ```bash
