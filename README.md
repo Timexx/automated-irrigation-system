@@ -32,8 +32,9 @@ Die App enthält die folgenden Funktionen:
 5. [ Raspberry Pi mit Docker konfigurieren (empfohlen) ](#raspi-docker)
 6. [ Raspberry Pi manuell konfigurieren ](#raspi-manually)
 7. [ Verwendung ](#usage)
-8. [ Beiträge ](#contributing)
-9. [ Lizenz ](#license)
+8. [ Autostart ](#autostart)
+9. [ Beiträge ](#contributing)
+10. [ Lizenz ](#license)
 
 <a name="part-list"></a>
 ## Part list
@@ -248,9 +249,31 @@ Wenn alles geklappt hat, solltest du die Messungen in der Ansicht "Letzte Minute
 
 Sollten keine Daten nach einigen Minuten angezeigt werden, musst du dein Backend noch einmal versuchen zu starten. 
 
+<a name="autostart"></a>
+## Autostart
+Wenn die Software automatisch starten soll, nach jedem Boot, kann das mit PM2 gemacht werden. 
+
+```bash
+npm install pm2@latest -g
+cd automated-irrigation-system
+pm2 start npm --name "Frontend" -- start
+cd backend 
+pm2 start npm --name "Backend" -- start
+```
+
+Prüfe nun ob die zwei Dienste gestartet wurden.
+```bash
+pm2 list
+```
+
+Nun speichere die pm2 Dienste, damit sie nun jedesmal automatisch gestartet werden:
+```bash
+pm2 save
+```
+
 <a name="contributing"></a>
 ## Beiträge
-Pull Requests sind willkommen. Für größere Änderungen öffnen Sie bitte zuerst ein Issue, um zu besprechen, was Sie ändern möchten.
+Pull Requests sind willkommen. Für größere Änderungen öffne bitte zuerst ein Issue, um zu besprechen, was du ändern möchten.
 
 <a name="licence"></a>
 ## Lizenz
