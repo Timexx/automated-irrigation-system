@@ -263,6 +263,16 @@ Wenn die Software automatisch starten soll, nach jedem Boot, kann das mit PM2 ge
 ```bash
 sudo npm install pm2@latest -g
 cd automated-irrigation-system
+pm2 startup
+```
+Jetzt wird ein Command im Terminal angezeigt, den musst du ausführen. 
+Er sieht in etwa so aus. Achtung! Verwende nicht meinen. Er ist nur ein Beispiel! 
+
+```bash
+sudo env PATH=$PATH:/usr/bin /usr/local/lib/node_modules/pm2/bin/pm2 startup systemd -u pi --hp /home/pi
+```
+
+```bash
 pm2 start npm --name "Frontend" -- start
 cd backend 
 pm2 start npm --name "Backend" -- start
